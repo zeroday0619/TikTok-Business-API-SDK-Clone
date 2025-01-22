@@ -94,7 +94,7 @@ class ReportingApi(object):
                  returns the request thread.
         """
 
-        all_params = ['advertiser_id', 'report_type', 'dimensions', 'access_token', 'service_type', 'data_level', 'metrics', 'order_field', 'order_type', 'start_date', 'end_date', 'filtering', 'query_lifetime', 'page', 'page_size', 'query_mode']  # noqa: E501
+        all_params = ['advertiser_id', 'report_type', 'dimensions', 'access_token', 'service_type', 'data_level', 'metrics', 'order_field', 'order_type', 'start_date', 'end_date', 'filtering', 'query_lifetime', 'page', 'page_size', 'query_mode', 'bc_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -164,6 +164,8 @@ class ReportingApi(object):
             query_params.append(('page_size', params['page_size']))  # noqa: E501
         if 'query_mode' in params:
             query_params.append(('query_mode', params['query_mode']))  # noqa: E501
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
 
         header_params = {}
         if 'access_token' in params:
